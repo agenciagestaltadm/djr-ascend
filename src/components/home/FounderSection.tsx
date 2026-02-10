@@ -1,0 +1,66 @@
+import { Award, Users, Zap, MapPin } from "lucide-react";
+import ScrollReveal from "@/components/shared/ScrollReveal";
+import SectionHeading from "@/components/shared/SectionHeading";
+import CountUp from "@/components/shared/CountUp";
+
+const stats = [
+  { icon: Award, value: 25, suffix: " anos", label: "de experiência" },
+  { icon: Users, value: 10, suffix: " mil+", label: "alunos formados" },
+  { icon: Zap, value: 11, suffix: " anos+", label: "no mercado (DJR)" },
+  { icon: MapPin, value: 2, suffix: " regiões", label: "Norte e Nordeste" },
+];
+
+const FounderSection = () => {
+  return (
+    <section className="section-padding bg-djr-darker relative overflow-hidden">
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/3 blur-[150px] pointer-events-none" />
+      <div className="container-djr relative z-10">
+        <SectionHeading
+          badge="Autoridade"
+          title="Daniel Jr — 25 anos de experiência"
+          subtitle="Pioneiro em tecnologias e procedimentos radiológicos na região Norte, com vasta atuação em hospitais e clínicas."
+        />
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {stats.map((s, i) => (
+            <ScrollReveal key={s.label} delay={i * 0.1}>
+              <div className="glass-card p-6 text-center group hover:border-primary/30 transition-colors">
+                <s.icon className="w-6 h-6 text-primary mx-auto mb-3" />
+                <div className="text-3xl font-heading font-bold text-foreground mb-1">
+                  <CountUp end={s.value} suffix={s.suffix} />
+                </div>
+                <p className="text-sm text-muted-foreground">{s.label}</p>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+
+        <ScrollReveal>
+          <div className="glass-card glow-border p-8 max-w-3xl mx-auto">
+            <h3 className="font-heading font-semibold text-lg text-foreground mb-4">Pioneirismos e destaques</h3>
+            <ul className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+              <li className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                Pioneiro na tomografia multislice 128 canais na região Norte
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                Realização de angiocoronárias em múltiplas plataformas
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                Atuação em hospitais e clínicas radiológicas de diversas complexidades
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                Formação de milhares de profissionais em cursos e treinamentos especializados
+              </li>
+            </ul>
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
+  );
+};
+
+export default FounderSection;
