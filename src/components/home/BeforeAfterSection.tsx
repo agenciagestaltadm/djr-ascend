@@ -28,7 +28,7 @@ const BeforeAfterSection = () => {
           subtitle="Veja o impacto real da nossa assessoria no dia a dia do seu setor."
         />
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <ScrollReveal direction="left">
             <div className="glass-card p-8 border border-destructive/20 h-full">
               <h3 className="font-heading font-bold text-lg text-destructive mb-6">Antes</h3>

@@ -1,6 +1,8 @@
 import { Search, Target, Wrench, BarChart3 } from "lucide-react";
 import ScrollReveal from "@/components/shared/ScrollReveal";
 import SectionHeading from "@/components/shared/SectionHeading";
+import ResponsiveImage from "@/components/shared/ResponsiveImage";
+import { publicImagesByCategory } from "@/data/publicImages";
 import {
   Accordion,
   AccordionContent,
@@ -36,6 +38,8 @@ const pillars = [
 ];
 
 const MethodSection = () => {
+  const image = publicImagesByCategory.gallery[18];
+
   return (
     <section className="section-padding bg-djr-darker relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-primary/3 blur-[150px] pointer-events-none" />
@@ -46,28 +50,51 @@ const MethodSection = () => {
           subtitle="Quatro etapas estruturadas para transformar o desempenho do seu setor de imagem."
         />
 
-        <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-3">
-            {pillars.map((p, i) => (
-              <ScrollReveal key={p.step} delay={i * 0.08}>
-                <AccordionItem
-                  value={p.step}
-                  className="glass-card border border-border/50 rounded-xl px-6 data-[state=open]:border-primary/30 transition-colors"
-                >
-                  <AccordionTrigger className="hover:no-underline py-5">
-                    <div className="flex items-center gap-4 text-left">
-                      <span className="text-xs font-heading font-bold text-primary">{p.step}</span>
-                      <p.icon className="w-5 h-5 text-primary flex-shrink-0" />
-                      <span className="font-heading font-semibold text-foreground">{p.title}</span>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground leading-relaxed pb-5 pl-[68px]">
-                    {p.desc}
-                  </AccordionContent>
-                </AccordionItem>
-              </ScrollReveal>
-            ))}
-          </Accordion>
+        <div className="grid lg:grid-cols-2 gap-10 items-start max-w-6xl mx-auto">
+          <div>
+            <Accordion type="single" collapsible className="space-y-4">
+              {pillars.map((p, i) => (
+                <ScrollReveal key={p.step} delay={i * 0.08}>
+                  <AccordionItem
+                    value={p.step}
+                    className="glass-card border border-border/50 rounded-xl px-6 data-[state=open]:border-primary/30 transition-colors"
+                  >
+                    <AccordionTrigger className="hover:no-underline py-5">
+                      <div className="flex items-center gap-4 text-left">
+                        <span className="text-xs font-heading font-bold text-primary">{p.step}</span>
+                        <p.icon className="w-5 h-5 text-primary flex-shrink-0" />
+                        <span className="font-heading font-semibold text-foreground">{p.title}</span>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground leading-relaxed pb-5 pl-[68px]">
+                      {p.desc}
+                    </AccordionContent>
+                  </AccordionItem>
+                </ScrollReveal>
+              ))}
+            </Accordion>
+          </div>
+
+          <ScrollReveal direction="right">
+            <div className="glass-card glow-border overflow-hidden relative">
+              <ResponsiveImage
+                src={image?.src ?? publicImagesByCategory.icon[0].src}
+                alt={image?.alt ?? publicImagesByCategory.icon[0].alt}
+                sources={image?.sources}
+                className="w-full h-auto object-cover opacity-85"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/30 to-transparent pointer-events-none" />
+              <div className="absolute bottom-5 left-5 right-5">
+                <div className="glass-card px-4 py-3 border border-border/40">
+                  <p className="text-sm text-foreground font-heading font-semibold">Rotina clara, equipe alinhada.</p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Padronização, treinamento e monitoramento para resultados sustentáveis.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

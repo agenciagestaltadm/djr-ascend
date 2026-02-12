@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X, CalendarClock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import ResponsiveImage from "@/components/shared/ResponsiveImage";
+import { publicImagesByCategory } from "@/data/publicImages";
+import { CONSULTORIA_CTA_LABEL, CONSULTORIA_WA_URL } from "@/lib/consultoria";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -12,12 +15,11 @@ const navItems = [
   { label: "Contato", href: "/contato" },
 ];
 
-const WHATSAPP_URL = "https://wa.me/5500000000000?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20DJR.";
-
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const location = useLocation();
+  const logo = publicImagesByCategory.logo[0];
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -33,18 +35,22 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border/50 py-3"
-          : "bg-transparent py-5"
+          ? "bg-background/85 backdrop-blur-xl border-b border-border/50 py-3 shadow-[0_8px_30px_-18px_rgba(0,0,0,0.9)]"
+          : "bg-background/55 backdrop-blur-xl border-b border-border/30 py-4"
       }`}
     >
       <div className="container-djr flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center font-heading font-bold text-primary-foreground text-lg">
-            D
-          </div>
-          <span className="font-heading font-bold text-xl text-foreground">
-            DJR<span className="text-primary">.</span>
+          <span className="rounded-xl bg-white/95 p-1.5 shadow-[0_10px_30px_-18px_rgba(0,0,0,0.9)] ring-1 ring-black/10">
+            <ResponsiveImage
+              src={logo.src}
+              alt={logo.alt}
+              sources={logo.sources}
+              className="h-10 w-auto object-contain"
+              loading="eager"
+              decoding="async"
+            />
           </span>
         </Link>
 
@@ -68,9 +74,9 @@ const Header = () => {
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
           <Button asChild size="sm" className="gap-2 font-heading font-semibold">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-              <MessageCircle className="w-4 h-4" />
-              Falar no WhatsApp
+            <a href={CONSULTORIA_WA_URL} target="_blank" rel="noopener noreferrer">
+              <CalendarClock className="w-4 h-4" />
+              {CONSULTORIA_CTA_LABEL}
             </a>
           </Button>
         </div>
@@ -109,9 +115,9 @@ const Header = () => {
                 </Link>
               ))}
               <Button asChild className="gap-2 mt-2 font-heading">
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="w-4 h-4" />
-                  Falar no WhatsApp
+                <a href={CONSULTORIA_WA_URL} target="_blank" rel="noopener noreferrer">
+                  <CalendarClock className="w-4 h-4" />
+                  {CONSULTORIA_CTA_LABEL}
                 </a>
               </Button>
             </nav>

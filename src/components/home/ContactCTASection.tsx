@@ -1,159 +1,115 @@
-import { useState } from "react";
-import { MessageCircle, Send } from "lucide-react";
+import { CalendarClock, Quote, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Checkbox } from "@/components/ui/checkbox";
 import ScrollReveal from "@/components/shared/ScrollReveal";
 import SectionHeading from "@/components/shared/SectionHeading";
-import { useToast } from "@/hooks/use-toast";
+import ResponsiveImage from "@/components/shared/ResponsiveImage";
+import { publicImagesByCategory } from "@/data/publicImages";
+import { CONSULTORIA_CTA_LABEL, CONSULTORIA_WA_URL } from "@/lib/consultoria";
 
-const WHATSAPP_URL = "https://wa.me/5500000000000?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20do%20meu%20setor%20de%20imagem.";
-
-const interests = [
-  "Consultoria/Assessoria",
-  "Gestão Radiológica",
-  "Treinamentos",
-  "Viabilidade Financeira",
-  "Equipamentos",
-  "TeleRadiologia",
-  "Outro",
+const testimonials = [
+  {
+    quote: "Padronizamos rotinas e reduzimos retrabalho já nas primeiras semanas.",
+    name: "Coordenação do Setor de Imagem",
+    org: "Hospital parceiro",
+  },
+  {
+    quote: "A consultoria trouxe clareza de indicadores e direcionou o plano de ação.",
+    name: "Gestão Operacional",
+    org: "Clínica de diagnóstico",
+  },
+  {
+    quote: "Treinamento objetivo e aplicável, com impacto direto na qualidade dos exames.",
+    name: "Liderança Técnica",
+    org: "Serviço de imagenologia",
+  },
 ];
 
 const ContactCTASection = () => {
-  const { toast } = useToast();
-  const [consent, setConsent] = useState(false);
-  const [honeypot, setHoneypot] = useState("");
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (honeypot) return; // antispam
-
-    if (!consent) {
-      toast({
-        title: "Consentimento necessário",
-        description: "Aceite a política de privacidade para enviar.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    toast({
-      title: "Mensagem enviada!",
-      description: "Entraremos em contato em breve.",
-    });
-  };
+  const image = publicImagesByCategory.gallery[19];
 
   return (
     <section className="section-padding relative" id="contato">
       <div className="absolute inset-0 tech-grid opacity-10" />
       <div className="container-djr relative z-10">
         <SectionHeading
-          badge="Contato"
-          title="Solicite uma avaliação do seu setor de imagem"
-          subtitle="Preencha o formulário ou fale diretamente no WhatsApp. Respondemos em até 24h úteis."
+          badge="Consultoria"
+          title="Agende uma consultoria para o seu setor de imagem"
+          subtitle="Converse com nossa equipe e receba um direcionamento claro para reduzir glosas e elevar produtividade."
         />
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          {/* Form */}
+        <div className="grid desktop:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <ScrollReveal direction="left">
-            <form onSubmit={handleSubmit} className="glass-card glow-border p-8 space-y-5">
-              {/* Honeypot */}
-              <input
-                type="text"
-                name="website"
-                value={honeypot}
-                onChange={(e) => setHoneypot(e.target.value)}
-                className="absolute opacity-0 pointer-events-none h-0"
-                tabIndex={-1}
-                autoComplete="off"
-                aria-hidden="true"
-              />
-
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="text-sm font-medium text-foreground mb-1.5 block">Nome *</label>
-                  <Input placeholder="Seu nome" required maxLength={100} />
+            <div className="glass-card glow-border p-8">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
+                  <Quote className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <label className="text-sm font-medium text-foreground mb-1.5 block">Empresa *</label>
-                  <Input placeholder="Hospital / Clínica" required maxLength={100} />
+                  <p className="font-heading font-semibold text-foreground">O que nossos parceiros relatam</p>
+                  <p className="text-sm text-muted-foreground">Resultados práticos no dia a dia do setor.</p>
                 </div>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="text-sm font-medium text-foreground mb-1.5 block">Cidade/UF *</label>
-                  <Input placeholder="Ex: Belém/PA" required maxLength={50} />
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-foreground mb-1.5 block">WhatsApp *</label>
-                  <Input placeholder="(00) 00000-0000" required maxLength={20} type="tel" />
-                </div>
+              <div className="grid gap-4">
+                {testimonials.map((t) => (
+                  <div key={t.quote} className="glass-card px-5 py-4 border border-border/40">
+                    <p className="text-sm text-foreground leading-relaxed">{t.quote}</p>
+                    <div className="mt-2 flex items-center justify-between gap-3">
+                      <span className="text-xs text-muted-foreground">{t.name}</span>
+                      <span className="text-xs text-muted-foreground">{t.org}</span>
+                    </div>
+                  </div>
+                ))}
               </div>
-
-              <div>
-                <label className="text-sm font-medium text-foreground mb-1.5 block">Interesse *</label>
-                <Select required>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Selecione" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {interests.map((i) => (
-                      <SelectItem key={i} value={i}>{i}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div>
-                <label className="text-sm font-medium text-foreground mb-1.5 block">Mensagem</label>
-                <Textarea placeholder="Descreva brevemente sua necessidade..." rows={3} maxLength={1000} />
-              </div>
-
-              <div className="flex items-start gap-2">
-                <Checkbox
-                  id="lgpd"
-                  checked={consent}
-                  onCheckedChange={(v) => setConsent(v === true)}
-                />
-                <label htmlFor="lgpd" className="text-xs text-muted-foreground leading-snug cursor-pointer">
-                  Concordo com a <a href="/politica-de-privacidade" className="text-primary underline">Política de Privacidade</a> e autorizo o contato. *
-                </label>
-              </div>
-
-              <Button type="submit" className="w-full gap-2 font-heading font-semibold scan-line">
-                <Send className="w-4 h-4" />
-                Enviar mensagem
-              </Button>
-            </form>
+            </div>
           </ScrollReveal>
 
-          {/* WhatsApp CTA */}
           <ScrollReveal direction="right">
-            <div className="flex flex-col justify-center items-center text-center h-full">
-              <div className="w-20 h-20 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-6">
-                <MessageCircle className="w-10 h-10 text-primary" />
+            <div className="glass-card glow-border p-8 flex flex-col justify-center items-center text-center h-full relative overflow-hidden">
+              <ResponsiveImage
+                src={image?.src ?? publicImagesByCategory.icon[0].src}
+                alt={image?.alt ?? publicImagesByCategory.icon[0].alt}
+                sources={image?.sources}
+                className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none select-none"
+                loading="lazy"
+                style={{ filter: "grayscale(1) contrast(1.15) brightness(0.75)" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-background/35 via-background/70 to-background/95 pointer-events-none" />
+
+              <div className="relative z-10 flex flex-col justify-center items-center text-center h-full">
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4">
+                  <CalendarClock className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="font-heading font-bold text-2xl text-foreground mb-3">
+                  Vamos alinhar seu próximo passo
+                </h3>
+                <p className="text-muted-foreground mb-5 max-w-sm">
+                  Agende uma consultoria e receba orientação objetiva sobre rotinas, indicadores e melhorias para o setor.
+                </p>
+                <Button asChild size="lg" className="gap-2 font-heading font-semibold scan-line">
+                  <a href={CONSULTORIA_WA_URL} target="_blank" rel="noopener noreferrer">
+                    <CalendarClock className="w-5 h-5" />
+                    {CONSULTORIA_CTA_LABEL}
+                  </a>
+                </Button>
+
+                <div className="mt-5 w-full max-w-sm grid gap-3 text-left">
+                  <a
+                    href="tel:+5591989948319"
+                    className="flex items-center gap-2 rounded-lg border border-border/40 bg-card/30 px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
+                  >
+                    <Phone className="w-4 h-4 text-primary" />
+                    (91) 98994-8319
+                  </a>
+                  <a
+                    href="mailto:djrdiagnosticos@gmail.com"
+                    className="flex items-center gap-2 rounded-lg border border-border/40 bg-card/30 px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
+                  >
+                    <Mail className="w-4 h-4 text-primary" />
+                    djrdiagnosticos@gmail.com
+                  </a>
+                </div>
               </div>
-              <h3 className="font-heading font-bold text-2xl text-foreground mb-3">
-                Prefere falar direto?
-              </h3>
-              <p className="text-muted-foreground mb-6 max-w-sm">
-                Clique no botão abaixo e converse com nossa equipe agora pelo WhatsApp.
-              </p>
-              <Button asChild size="lg" className="gap-2 font-heading font-semibold scan-line">
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="w-5 h-5" />
-                  Abrir WhatsApp
-                </a>
-              </Button>
             </div>
           </ScrollReveal>
         </div>

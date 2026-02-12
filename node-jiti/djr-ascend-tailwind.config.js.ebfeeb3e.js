@@ -1,6 +1,4 @@
-import type { Config } from "tailwindcss";
-
-export default {
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});exports. default = {
   darkMode: ["class"],
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
@@ -13,9 +11,14 @@ export default {
       },
     },
     extend: {
+      screens: {
+        phone: { max: "480px" },
+        tablet: { raw: "(min-width: 481px) and (max-width: 768px)" },
+        desktop: "769px",
+      },
       fontFamily: {
-        heading: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
-        body: ['Inter', 'system-ui', 'sans-serif'],
+        heading: ["\"Space Grotesk\"", "system-ui", "sans-serif"],
+        body: ["Inter", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -122,4 +125,5 @@ export default {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config;
+};
+ /* v7-f415f96761582649 */

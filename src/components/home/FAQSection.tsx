@@ -44,7 +44,7 @@ const FAQSection = () => {
         />
 
         <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-3">
+          <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <AccordionItem

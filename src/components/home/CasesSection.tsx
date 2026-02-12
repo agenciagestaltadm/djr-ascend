@@ -1,10 +1,11 @@
-import { TrendingUp, ArrowRight, MessageCircle } from "lucide-react";
+import { TrendingUp, ArrowRight, CalendarClock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/shared/ScrollReveal";
 import SectionHeading from "@/components/shared/SectionHeading";
 import CountUp from "@/components/shared/CountUp";
-
-const WHATSAPP_URL = "https://wa.me/5500000000000?text=Ol%C3%A1%2C%20quero%20aplicar%20resultados%20como%20esses%20no%20meu%20hospital.";
+import ResponsiveImage from "@/components/shared/ResponsiveImage";
+import { publicImagesByCategory } from "@/data/publicImages";
+import { CONSULTORIA_WA_URL } from "@/lib/consultoria";
 
 const cases = [
   {
@@ -35,6 +36,8 @@ const cases = [
 ];
 
 const CasesSection = () => {
+  const images = publicImagesByCategory.gallery.slice(10, 13);
+
   return (
     <section className="section-padding relative">
       <div className="container-djr">
@@ -44,11 +47,21 @@ const CasesSection = () => {
           subtitle="Conheça alguns dos projetos que transformaram a operação de hospitais e clínicas."
         />
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-8">
           {cases.map((c, i) => (
             <ScrollReveal key={c.hospital} delay={i * 0.1}>
-              <div className="glass-card glow-border flex flex-col h-full overflow-hidden group">
-                <div className="p-6 flex-1">
+              <div className="glass-card glow-border flex flex-col h-full overflow-hidden group relative">
+                <ResponsiveImage
+                  src={images[i]?.src ?? publicImagesByCategory.icon[0].src}
+                  alt={images[i]?.alt ?? publicImagesByCategory.icon[0].alt}
+                  sources={images[i]?.sources}
+                  className="absolute inset-0 w-full h-full object-cover opacity-18 pointer-events-none select-none"
+                  loading="lazy"
+                  style={{ filter: "grayscale(1) contrast(1.15) brightness(0.75)" }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-background/35 via-background/70 to-background/95 pointer-events-none" />
+
+                <div className="p-6 flex-1 relative z-10">
                   <div className="flex items-center gap-2 mb-4">
                     <span className="px-3 py-1 rounded-full text-[10px] font-heading font-semibold uppercase tracking-wider bg-primary/10 text-primary border border-primary/20">
                       {c.tag}
@@ -70,16 +83,16 @@ const CasesSection = () => {
                   <p className="text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
                 </div>
 
-                <div className="px-6 pb-6 flex gap-2">
+                <div className="px-6 pb-6 flex gap-2 relative z-10">
                   <Button
                     asChild
                     size="sm"
                     variant="outline"
                     className="gap-1 text-xs border-border hover:border-primary/50 hover:bg-primary/5"
                   >
-                    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                      <MessageCircle className="w-3 h-3" />
-                      Quero aplicar isso
+                    <a href={CONSULTORIA_WA_URL} target="_blank" rel="noopener noreferrer">
+                      <CalendarClock className="w-3 h-3" />
+                      Quero minha consultoria
                     </a>
                   </Button>
                 </div>

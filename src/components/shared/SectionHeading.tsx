@@ -9,7 +9,7 @@ interface SectionHeadingProps {
 
 const SectionHeading = ({ badge, title, subtitle, centered = true }: SectionHeadingProps) => {
   return (
-    <ScrollReveal className={`mb-12 md:mb-16 ${centered ? "text-center" : ""}`}>
+    <ScrollReveal className={`mb-14 md:mb-20 ${centered ? "text-center" : ""}`}>
       {badge && (
         <span className="inline-block px-4 py-1.5 rounded-full text-xs font-heading font-semibold tracking-wider uppercase bg-primary/10 text-primary border border-primary/20 mb-4">
           {badge}
