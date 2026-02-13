@@ -69,6 +69,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   * {
     @apply border-border;
   }
@@ -131,6 +135,10 @@
 
   .section-padding {
     @apply py-24 md:py-32 lg:py-36;
+  }
+
+  .section-scroll-target {
+    @apply scroll-mt-28;
   }
 
   .container-djr {

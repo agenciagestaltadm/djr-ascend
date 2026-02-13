@@ -39,7 +39,7 @@ const CasesSection = () => {
   const images = publicImagesByCategory.gallery.slice(10, 13);
 
   return (
-    <section className="section-padding relative">
+    <section id="portfolio" className="section-padding section-scroll-target relative">
       <div className="container-djr">
         <SectionHeading
           badge="Portfólio"

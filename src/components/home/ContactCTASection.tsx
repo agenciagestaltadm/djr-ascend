@@ -28,7 +28,7 @@ const ContactCTASection = () => {
   const image = publicImagesByCategory.gallery[19];
 
   return (
-    <section className="section-padding relative" id="contato">
+    <section className="section-padding section-scroll-target relative" id="contato">
       <div className="absolute inset-0 tech-grid opacity-10" />
       <div className="container-djr relative z-10">
         <SectionHeading

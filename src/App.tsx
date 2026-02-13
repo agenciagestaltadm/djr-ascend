@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppFloat from "@/components/layout/WhatsAppFloat";
+import ScrollToHashElement from "@/components/shared/ScrollToHashElement";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import PoliticaDePrivacidade from "./pages/PoliticaDePrivacidade";
@@ -19,6 +20,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToHashElement />
         <Header />
         <Routes>
           <Route path="/" element={<Index />} />

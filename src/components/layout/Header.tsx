@@ -9,10 +9,10 @@ import { CONSULTORIA_CTA_LABEL, CONSULTORIA_WA_URL } from "@/lib/consultoria";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Serviços", href: "/servicos" },
-  { label: "Portfólio", href: "/portfolio" },
-  { label: "Quem Somos", href: "/quem-somos" },
-  { label: "Contato", href: "/contato" },
+  { label: "Serviços", href: "/#servicos" },
+  { label: "Portfólio", href: "/#portfolio" },
+  { label: "Quem Somos", href: "/#quem-somos" },
+  { label: "Contato", href: "/#contato" },
 ];
 
 const Header = () => {
@@ -60,11 +60,7 @@ const Header = () => {
             <Link
               key={item.href}
               to={item.href}
-              className={`text-sm font-medium transition-colors duration-200 hover:text-primary ${
-                location.pathname === item.href
-                  ? "text-primary"
-                  : "text-muted-foreground"
-              }`}
+              className="text-sm font-medium transition-colors duration-200 hover:text-primary text-muted-foreground"
             >
               {item.label}
             </Link>
@@ -105,11 +101,8 @@ const Header = () => {
                 <Link
                   key={item.href}
                   to={item.href}
-                  className={`text-base font-medium py-2 transition-colors ${
-                    location.pathname === item.href
-                      ? "text-primary"
-                      : "text-muted-foreground"
-                  }`}
+                  className="text-base font-medium py-2 transition-colors text-muted-foreground hover:text-primary"
+                  onClick={() => setIsMobileOpen(false)}
                 >
                   {item.label}
                 </Link>

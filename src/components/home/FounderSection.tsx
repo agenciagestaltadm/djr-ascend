@@ -16,7 +16,7 @@ const FounderSection = () => {
   const images = publicImagesByCategory.gallery.slice(13, 17);
 
   return (
-    <section className="section-padding bg-djr-darker relative overflow-hidden">
+    <section id="quem-somos" className="section-padding section-scroll-target bg-djr-darker relative overflow-hidden">
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/3 blur-[150px] pointer-events-none" />
       <div className="container-djr relative z-10">
         <SectionHeading
