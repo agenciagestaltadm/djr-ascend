@@ -6,64 +6,64 @@
 
 @layer base {
   :root {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 95%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 10%;
 
-    --card: 0 0% 7%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
 
-    --popover: 0 0% 7%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
 
     --primary: 0 72% 51%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 15%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 55%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 0 0% 12%;
-    --accent-foreground: 0 0% 95%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 16%;
-    --input: 0 0% 16%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
     --ring: 0 72% 51%;
 
     --radius: 0.75rem;
 
     /* DJR Custom tokens */
     --djr-red: 0 72% 51%;
-    --djr-red-glow: 0 100% 60%;
-    --djr-dark: 0 0% 4%;
-    --djr-darker: 0 0% 2%;
-    --djr-surface: 0 0% 7%;
-    --djr-surface-hover: 0 0% 10%;
-    --djr-border-subtle: 0 0% 14%;
-    --djr-text-secondary: 0 0% 60%;
+    --djr-red-glow: 0 100% 55%;
+    --djr-dark: 0 0% 98%;
+    --djr-darker: 0 0% 100%;
+    --djr-surface: 0 0% 100%;
+    --djr-surface-hover: 0 0% 97%;
+    --djr-border-subtle: 0 0% 92%;
+    --djr-text-secondary: 0 0% 50%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 4%) 0%, hsl(0 0% 8%) 50%, hsl(0 10% 6%) 100%);
-    --gradient-red: linear-gradient(135deg, hsl(0 72% 51%) 0%, hsl(0 85% 40%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 8%) 0%, hsl(0 0% 5%) 100%);
-    --gradient-glow: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(0 72% 51% / 0.06), transparent 40%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 50%, hsl(0 20% 96%) 100%);
+    --gradient-red: linear-gradient(135deg, hsl(0 72% 51%) 0%, hsl(0 85% 45%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
+    --gradient-glow: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(0 72% 51% / 0.08), transparent 40%);
 
     /* Shadows */
-    --shadow-red: 0 0 30px -5px hsl(0 72% 51% / 0.3);
-    --shadow-card: 0 4px 24px -4px hsl(0 0% 0% / 0.5);
-    --shadow-card-hover: 0 8px 40px -8px hsl(0 72% 51% / 0.15);
+    --shadow-red: 0 0 30px -5px hsl(0 72% 51% / 0.25);
+    --shadow-card: 0 4px 24px -4px hsl(0 0% 0% / 0.08);
+    --shadow-card-hover: 0 8px 40px -8px hsl(0 72% 51% / 0.12);
 
-    --sidebar-background: 0 0% 5%;
-    --sidebar-foreground: 0 0% 95%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 10%;
     --sidebar-primary: 0 72% 51%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 10%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 0 0% 14%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 15%;
+    --sidebar-border: 0 0% 92%;
     --sidebar-ring: 0 72% 51%;
   }
 }
@@ -103,38 +103,34 @@
     content: '';
     @apply absolute inset-0 rounded-xl;
     padding: 1px;
-    background: linear-gradient(135deg, hsl(0 72% 51% / 0.5), transparent 50%, hsl(0 72% 51% / 0.2));
+    background: linear-gradient(135deg, hsl(0 72% 51% / 0.25), transparent 50%, hsl(0 72% 51% / 0.1));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
+    transition: background 0.3s ease;
+  }
+
+  .glow-border:hover::before {
+    background: linear-gradient(135deg, hsl(0 72% 51% / 0.4), transparent 50%, hsl(0 72% 51% / 0.15));
   }
 
   .tech-grid {
     background-image:
-      linear-gradient(hsl(0 0% 100% / 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(0 0% 100% / 0.03) 1px, transparent 1px);
+      linear-gradient(hsl(0 0% 0% / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(0 0% 0% / 0.04) 1px, transparent 1px);
     background-size: 60px 60px;
   }
 
   .scan-line {
-    @apply relative overflow-hidden;
+    @apply relative;
   }
 
-  .scan-line::after {
-    content: '';
-    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
-    background: linear-gradient(90deg, transparent, hsl(0 72% 51% / 0.1), transparent);
-    animation: scan 2s ease-in-out infinite;
-  }
-
-  .scan-line:hover::after {
-    @apply opacity-100;
-  }
+  /* Scan-line effect removed for cleaner, more professional look */
 
   .section-padding {
-    @apply py-24 md:py-32 lg:py-36;
+    @apply py-16 md:py-20 lg:py-24;
   }
 
   .section-scroll-target {
@@ -157,24 +153,19 @@
   .circuit-line::after {
     content: '';
     @apply absolute left-0 right-0 h-px;
-    background: linear-gradient(90deg, transparent, hsl(0 72% 51% / 0.3), hsl(0 0% 20% / 0.5), transparent);
+    background: linear-gradient(90deg, transparent, hsl(0 72% 51% / 0.4), hsl(0 0% 70% / 0.4), transparent);
   }
 }
 
 @layer utilities {
-  @keyframes scan {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-  }
-
   @keyframes float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-4px); }
   }
 
   @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 20px hsl(0 72% 51% / 0.2); }
-    50% { box-shadow: 0 0 40px hsl(0 72% 51% / 0.4); }
+    0%, 100% { box-shadow: 0 0 12px hsl(0 72% 51% / 0.15); }
+    50% { box-shadow: 0 0 24px hsl(0 72% 51% / 0.25); }
   }
 
   @keyframes count-up {
@@ -183,7 +174,7 @@
   }
 
   .animate-float {
-    animation: float 6s ease-in-out infinite;
+    animation: float 4s ease-in-out infinite;
   }
 
   .animate-pulse-glow {
@@ -191,8 +182,17 @@
   }
 
   .hero-figure-fade {
-    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 78%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 0%, #000 78%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, #fff 0%, #fff 65%, transparent 95%);
+    mask-image: linear-gradient(to bottom, #fff 0%, #fff 65%, transparent 95%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+
+  .hero-figure-fade-enhanced {
+    -webkit-mask-image: linear-gradient(to bottom, #fff 0%, #fff 55%, transparent 85%);
+    mask-image: linear-gradient(to bottom, #fff 0%, #fff 55%, transparent 85%);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-size: 100% 100%;

@@ -42,7 +42,7 @@ const Header = () => {
       <div className="container-djr flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <span className="rounded-xl bg-white/95 p-1.5 shadow-[0_10px_30px_-18px_rgba(0,0,0,0.9)] ring-1 ring-black/10">
+          <span className="rounded-xl bg-white p-1.5 shadow-[0_10px_30px_-18px_rgba(0,0,0,0.15)] ring-1 ring-border">
             <ResponsiveImage
               src={logo.src}
               alt={logo.alt}
@@ -57,13 +57,13 @@ const Header = () => {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            <Link
+            <a
               key={item.href}
-              to={item.href}
+              href={item.href}
               className="text-sm font-medium transition-colors duration-200 hover:text-primary text-muted-foreground"
             >
               {item.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
@@ -98,14 +98,14 @@ const Header = () => {
           >
             <nav className="container-djr py-6 flex flex-col gap-4">
               {navItems.map((item) => (
-                <Link
+                <a
                   key={item.href}
-                  to={item.href}
+                  href={item.href}
                   className="text-base font-medium py-2 transition-colors text-muted-foreground hover:text-primary"
                   onClick={() => setIsMobileOpen(false)}
                 >
                   {item.label}
-                </Link>
+                </a>
               ))}
               <Button asChild className="gap-2 mt-2 font-heading">
                 <a href={CONSULTORIA_WA_URL} target="_blank" rel="noopener noreferrer">

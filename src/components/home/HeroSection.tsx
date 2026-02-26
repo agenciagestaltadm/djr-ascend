@@ -17,8 +17,8 @@ const badges = [
 const rotatingWords = ["produtividade", "eficiência", "qualidade"];
 const ROTATING_WORD_MS = 2600;
 
-const DARK_FALLBACK_SVG =
-  "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='2'%20height='2'%3E%3Crect%20width='2'%20height='2'%20fill='black'/%3E%3C/svg%3E";
+const LIGHT_FALLBACK_SVG =
+  "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='2'%20height='2'%3E%3Crect%20width='2'%20height='2'%20fill='%23fafafa'/%3E%3C/svg%3E";
 
 const HeroSection = () => {
   const backgroundImage = publicImagesByCategory.heroBackground[0];
@@ -45,7 +45,7 @@ const HeroSection = () => {
           src={backgroundImage.src}
           alt={backgroundImage.alt}
           sources={backgroundImage.sources}
-          fallbackSrc={DARK_FALLBACK_SVG}
+          fallbackSrc={LIGHT_FALLBACK_SVG}
           className="w-full h-full object-cover opacity-40"
           loading="eager"
           fetchPriority="high"
@@ -99,16 +99,23 @@ const HeroSection = () => {
               </h1>
 
               <div className="relative w-full max-w-[400px] mx-auto lg:mx-0 lg:mt-0 lg:flex-shrink-0">
-                <ResponsiveImage
-                  src={heroFigure.src}
-                  alt={heroFigure.alt}
-                  sources={heroFigure.sources}
-                  className="w-full h-auto object-contain hero-figure-fade drop-shadow-[0_25px_80px_rgba(0,0,0,0.65)]"
-                  loading="eager"
-                  fetchPriority="high"
-                />
+                <div className="relative">
+                  <ResponsiveImage
+                    src={heroFigure.src}
+                    alt={heroFigure.alt}
+                    sources={heroFigure.sources}
+                    className="w-full h-auto object-contain drop-shadow-[0_8px_24px_rgba(0,0,0,0.15)]"
+                    loading="eager"
+                    fetchPriority="high"
+                    style={{ 
+                      filter: "contrast(1.08) saturate(1.15) brightness(1.02)",
+                      objectPosition: "center top"
+                    }}
+                  />
+                  {/* Overlay para disfarçar área inferior das calças - FORA da imagem */}
+                  <div className="absolute bottom-0 left-0 right-0 h-[45%] bg-gradient-to-t from-background via-background to-transparent pointer-events-none" />
+                </div>
                 <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[90%] h-24 rounded-full bg-primary/10 blur-2xl opacity-70 pointer-events-none" />
-                <div className="absolute inset-x-0 bottom-0 h-36 md:h-44 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none" />
 
                 <div className="hidden lg:block">
                   {badges.map((badge, i) => (
@@ -120,14 +127,14 @@ const HeroSection = () => {
                           : i === 1
                             ? "-top-6 -right-8"
                             : i === 2
-                              ? "bottom-10 -left-10"
-                              : "bottom-0 -right-10"
+                              ? "bottom-16 -left-10"
+                              : "bottom-12 -right-10"
                       }`}
                       initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: [0, -10, 0] }}
+                      animate={{ opacity: 1, y: [0, -4, 0] }}
                       transition={{
                         delay: 0.5 + i * 0.08,
-                        duration: 3.6,
+                        duration: 4,
                         repeat: Infinity,
                         repeatType: "mirror",
                         ease: [0.2, 0.8, 0.2, 1],
@@ -144,10 +151,10 @@ const HeroSection = () => {
                       key={badge}
                       className="glass-card glow-border px-4 py-3 text-center"
                       initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: [0, -6, 0] }}
+                      animate={{ opacity: 1, y: [0, -3, 0] }}
                       transition={{
                         delay: 0.45 + i * 0.07,
-                        duration: 3.2,
+                        duration: 3.5,
                         repeat: Infinity,
                         repeatType: "mirror",
                         ease: [0.2, 0.8, 0.2, 1],
@@ -177,7 +184,7 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.45 }}
               >
-                <Button asChild size="lg" className="gap-2 font-heading font-semibold text-base scan-line">
+                <Button asChild size="lg" className="gap-2 font-heading font-semibold text-base transition-all duration-300 hover:shadow-lg hover:shadow-primary/20">
                   <a href={CONSULTORIA_WA_URL} target="_blank" rel="noopener noreferrer">
                     <CalendarClock className="w-5 h-5" />
                     {CONSULTORIA_CTA_LABEL}
@@ -189,10 +196,10 @@ const HeroSection = () => {
                   size="lg"
                   className="gap-2 font-heading font-semibold text-base border-border hover:border-primary/50 hover:bg-primary/5"
                 >
-                  <Link to="/servicos">
+                  <a href="/#servicos">
                     Ver Serviços
                     <ArrowRight className="w-4 h-4" />
-                  </Link>
+                  </a>
                 </Button>
               </motion.div>
             </div>

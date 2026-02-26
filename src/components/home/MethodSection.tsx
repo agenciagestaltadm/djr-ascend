@@ -81,8 +81,9 @@ const MethodSection = () => {
                 src={image?.src ?? publicImagesByCategory.icon[0].src}
                 alt={image?.alt ?? publicImagesByCategory.icon[0].alt}
                 sources={image?.sources}
-                className="w-full h-auto object-cover opacity-85"
+                className="w-full h-auto object-cover opacity-90"
                 loading="lazy"
+                style={{ filter: "contrast(1.05) saturate(1.1) brightness(1.02)" }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/30 to-transparent pointer-events-none" />
               <div className="absolute bottom-5 left-5 right-5">

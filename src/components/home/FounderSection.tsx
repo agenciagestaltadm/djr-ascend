@@ -33,11 +33,11 @@ const FounderSection = () => {
                   src={images[i]?.src ?? publicImagesByCategory.icon[0].src}
                   alt={images[i]?.alt ?? publicImagesByCategory.icon[0].alt}
                   sources={images[i]?.sources}
-                  className="absolute inset-0 w-full h-full object-cover opacity-18 pointer-events-none select-none"
+                  className="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none select-none"
                   loading="lazy"
-                  style={{ filter: "grayscale(1) contrast(1.15) brightness(0.75)" }}
+                  style={{ filter: "contrast(1.15) brightness(1) saturate(1.4)" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-background/35 via-background/70 to-background/95 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-b from-background/15 via-background/35 to-background/80 pointer-events-none" />
                 <div className="relative z-10">
                   <s.icon className="w-6 h-6 text-primary mx-auto mb-3" />
                   <div className="text-3xl font-heading font-bold text-foreground mb-1">

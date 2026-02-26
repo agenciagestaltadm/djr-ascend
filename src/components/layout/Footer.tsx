@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Building2, Mail, Phone } from "lucide-react";
+import { Building2, Mail, Phone, Instagram } from "lucide-react";
 import ResponsiveImage from "@/components/shared/ResponsiveImage";
 import { publicImagesByCategory } from "@/data/publicImages";
 
@@ -35,9 +35,9 @@ const Footer = () => {
               <Link to="/termos-de-uso" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Termos de Uso
               </Link>
-              <Link to="/#contato" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="/#contato" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Contato
-              </Link>
+              </a>
             </nav>
           </div>
 
@@ -57,6 +57,15 @@ const Footer = () => {
               >
                 <Mail className="w-4 h-4 text-primary" />
                 djrdiagnosticos@gmail.com
+              </a>
+              <a
+                href="https://instagram.com/djr.assessoria"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center desktop:justify-start gap-2 rounded-lg border border-border/40 bg-card/20 px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
+              >
+                <Instagram className="w-4 h-4 text-primary" />
+                @djr.assessoria
               </a>
               <div className="inline-flex items-center justify-center desktop:justify-start gap-2 rounded-lg border border-border/40 bg-card/20 px-4 py-3 text-sm text-muted-foreground">
                 <Building2 className="w-4 h-4 text-primary" />

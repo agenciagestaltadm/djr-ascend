@@ -47,11 +47,11 @@ const ProblemsSection = () => {
                   src={images[i]?.src ?? publicImagesByCategory.icon[0].src}
                   alt={images[i]?.alt ?? publicImagesByCategory.icon[0].alt}
                   sources={images[i]?.sources}
-                  className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none select-none"
+                  className="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none select-none"
                   loading="lazy"
-                  style={{ filter: "grayscale(1) contrast(1.15) brightness(0.75)" }}
+                  style={{ filter: "contrast(1.15) brightness(1) saturate(1.4)" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background/90 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/40 to-background/75 pointer-events-none" />
                 <div className="relative z-10">
                   <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                     <p.icon className="w-5 h-5 text-primary" />
