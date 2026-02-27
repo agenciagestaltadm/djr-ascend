@@ -65,16 +65,9 @@ export const publicImages: PublicImage[] = [
   },
   {
     key: "hero-dr-mike",
-    src: "/𝓓𝓻_%20𝓜𝓲𝓴𝓮_.png",
+    src: "/Cartaz%20Odontologia%20verde%20e%20branco.png",
     alt: "Imagem de médico representando assessoria médica",
     category: "hero",
-    sources: [
-      {
-        type: "image/webp",
-        srcSet: webpSrcSet("hero-dr-mike", [768, 1024, 1440, 1920]),
-        sizes: sizesHero,
-      },
-    ],
   },
   {
     key: "icon-placeholder",

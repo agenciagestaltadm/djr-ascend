@@ -104,18 +104,16 @@ const HeroSection = () => {
                     src={heroFigure.src}
                     alt={heroFigure.alt}
                     sources={heroFigure.sources}
-                    className="w-full h-auto object-contain drop-shadow-[0_8px_24px_rgba(0,0,0,0.15)]"
+                    className="w-full h-auto object-contain"
                     loading="eager"
                     fetchPriority="high"
-                    style={{ 
-                      filter: "contrast(1.08) saturate(1.15) brightness(1.02)",
-                      objectPosition: "center top"
+                    style={{
+                      objectPosition: "center top",
+                      WebkitMaskImage: "linear-gradient(to bottom, black 65%, transparent 100%)",
+                      maskImage: "linear-gradient(to bottom, black 65%, transparent 100%)",
                     }}
                   />
-                  {/* Overlay para disfarçar área inferior das calças - FORA da imagem */}
-                  <div className="absolute bottom-0 left-0 right-0 h-[45%] bg-gradient-to-t from-background via-background to-transparent pointer-events-none" />
                 </div>
-                <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[90%] h-24 rounded-full bg-primary/10 blur-2xl opacity-70 pointer-events-none" />
 
                 <div className="hidden lg:block">
                   {badges.map((badge, i) => (
