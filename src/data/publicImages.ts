@@ -342,6 +342,15 @@ export const publicImages: PublicImage[] = [
       { type: "image/webp", srcSet: webpSrcSet("gallery-29", [480, 768, 1024]), sizes: sizesGallery },
     ],
   },
+  {
+    key: "gallery-30",
+    src: "/imagemalterada10.jpeg",
+    alt: "Foto da galeria DJR 30 - Protocolos inconsistentes",
+    category: "gallery",
+    sources: [
+      { type: "image/webp", srcSet: webpSrcSet("gallery-30", [480, 768, 1024]), sizes: sizesGallery },
+    ],
+  },
 ];
 
 export const publicImagesByCategory = {

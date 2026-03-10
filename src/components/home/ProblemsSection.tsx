@@ -29,12 +29,12 @@ const problems = [
 
 const ProblemsSection = () => {
   const baseImages = publicImagesByCategory.gallery.slice(0, 4);
-  // Substituir primeira imagem (Glosas e erros técnicos) pela gallery-21
+  // Substituir imagens dos cards
   const images = [
     publicImagesByCategory.gallery[20], // gallery-21 - Nova imagem para Glosas e erros técnicos
-    baseImages[1], // gallery-02
-    baseImages[2], // gallery-03
-    baseImages[3], // gallery-04
+    baseImages[1], // gallery-02 - Retrabalho e baixa produtividade
+    publicImagesByCategory.gallery[29], // gallery-30 (imagemalterada10) - Protocolos inconsistentes
+    baseImages[3], // gallery-04 - Crescimento sem planejamento
   ];
 
   return (
