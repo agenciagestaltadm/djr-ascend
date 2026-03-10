@@ -18,7 +18,7 @@
   },
   {
     "key": "hero-bg",
-    "inputFile": "hero-bg.jpg",
+    "inputFile": "imagemalterado1.jpeg",
     "widths": [
       960,
       1280,
@@ -210,6 +210,87 @@
   {
     "key": "gallery-20",
     "inputFile": "WhatsApp Image 2026-02-07 at 13.20.15.jpeg",
+    "widths": [
+      480,
+      768,
+      1024
+    ]
+  },
+  {
+    "key": "gallery-21",
+    "inputFile": "WhatsApp Image 2026-03-03 at 15.48.30.jpeg",
+    "widths": [
+      480,
+      768,
+      1024
+    ]
+  },
+  {
+    "key": "gallery-22",
+    "inputFile": "imagemalterado2.jpeg",
+    "widths": [
+      480,
+      768,
+      1024
+    ]
+  },
+  {
+    "key": "gallery-23",
+    "inputFile": "imagemalterado3.jpeg",
+    "widths": [
+      480,
+      768,
+      1024
+    ]
+  },
+  {
+    "key": "gallery-24",
+    "inputFile": "imagemalterado4.jpeg",
+    "widths": [
+      480,
+      768,
+      1024
+    ]
+  },
+  {
+    "key": "gallery-25",
+    "inputFile": "imagemalterado5.jpeg",
+    "widths": [
+      480,
+      768,
+      1024
+    ]
+  },
+  {
+    "key": "gallery-26",
+    "inputFile": "imagemalterado6.jpeg",
+    "widths": [
+      480,
+      768,
+      1024
+    ]
+  },
+  {
+    "key": "gallery-27",
+    "inputFile": "imagemalterada7.jpeg",
+    "widths": [
+      480,
+      768,
+      1024
+    ]
+  },
+  {
+    "key": "gallery-28",
+    "inputFile": "imagemalterada8.jpeg",
+    "widths": [
+      480,
+      768,
+      1024
+    ]
+  },
+  {
+    "key": "gallery-29",
+    "inputFile": "imagemalterada9.jpeg",
     "widths": [
       480,
       768,

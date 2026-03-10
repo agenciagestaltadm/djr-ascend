@@ -77,7 +77,7 @@ const HeroSection = () => {
               transition={{ duration: 0.7, delay: 0.15, ease: [0.2, 0.8, 0.2, 1] }}
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.1] mb-3 lg:mb-0 lg:flex-1">
-                Reduza glosas e aumente a{" "}
+                Reduza custos e aumente a{" "}
                 <span className="relative inline-block align-baseline">
                   <span className="invisible">{longestWord}</span>
                   <span className="absolute inset-0 flex items-baseline">

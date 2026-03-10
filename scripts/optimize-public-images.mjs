@@ -77,7 +77,7 @@ const run = async () => {
       quality: 78,
     },
     {
-      inputFile: "hero-bg.jpg",
+      inputFile: "imagemalterado1.jpeg",
       key: "hero-bg",
       widths: [960, 1280, 1920, 2560],
       quality: 78,
@@ -96,6 +96,54 @@ const run = async () => {
       widths: [480, 768, 1024],
       quality: 80,
     })),
+    {
+      inputFile: "imagemalterado2.jpeg",
+      key: "gallery-22",
+      widths: [480, 768, 1024],
+      quality: 80,
+    },
+    {
+      inputFile: "imagemalterado3.jpeg",
+      key: "gallery-23",
+      widths: [480, 768, 1024],
+      quality: 80,
+    },
+    {
+      inputFile: "imagemalterado4.jpeg",
+      key: "gallery-24",
+      widths: [480, 768, 1024],
+      quality: 80,
+    },
+    {
+      inputFile: "imagemalterado5.jpeg",
+      key: "gallery-25",
+      widths: [480, 768, 1024],
+      quality: 80,
+    },
+    {
+      inputFile: "imagemalterado6.jpeg",
+      key: "gallery-26",
+      widths: [480, 768, 1024],
+      quality: 80,
+    },
+    {
+      inputFile: "imagemalterada7.jpeg",
+      key: "gallery-27",
+      widths: [480, 768, 1024],
+      quality: 80,
+    },
+    {
+      inputFile: "imagemalterada8.jpeg",
+      key: "gallery-28",
+      widths: [480, 768, 1024],
+      quality: 80,
+    },
+    {
+      inputFile: "imagemalterada9.jpeg",
+      key: "gallery-29",
+      widths: [480, 768, 1024],
+      quality: 80,
+    },
   ];
 
   for (const job of jobs) {

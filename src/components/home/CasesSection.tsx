@@ -21,7 +21,7 @@ const cases = [
     hospital: "Hospital HSC + Medicine Imagem",
     city: "Capanema/PA",
     highlight: null,
-    highlightLabel: "Redução significativa de erros técnicos e glosas",
+    highlightLabel: "Redução significativa de erros técnicos e custos",
     desc: "Padronização de protocolos, capacitação da equipe e melhoria da qualidade dos exames.",
     tag: "Treinamento",
   },
@@ -37,6 +37,12 @@ const cases = [
 
 const CasesSection = () => {
   const images = publicImagesByCategory.gallery.slice(10, 13);
+  // Usar novas imagens para os cases
+  const caseImages = [
+    publicImagesByCategory.gallery[23], // gallery-24 (imagemalterado4) - Hospital HCA
+    publicImagesByCategory.gallery[20], // gallery-21 - Hospital HSC
+    publicImagesByCategory.gallery[24], // gallery-25 (imagemalterado5) - Hospital HSMA
+  ];
 
   return (
     <section id="portfolio" className="section-padding section-scroll-target relative">
@@ -52,9 +58,9 @@ const CasesSection = () => {
             <ScrollReveal key={c.hospital} delay={i * 0.1}>
               <div className="glass-card glow-border flex flex-col h-full overflow-hidden group relative">
                 <ResponsiveImage
-                  src={images[i]?.src ?? publicImagesByCategory.icon[0].src}
-                  alt={images[i]?.alt ?? publicImagesByCategory.icon[0].alt}
-                  sources={images[i]?.sources}
+                  src={caseImages[i]?.src ?? publicImagesByCategory.icon[0].src}
+                  alt={caseImages[i]?.alt ?? publicImagesByCategory.icon[0].alt}
+                  sources={caseImages[i]?.sources}
                   className="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none select-none"
                   loading="lazy"
                   style={{ filter: "contrast(1.15) brightness(1) saturate(1.4)" }}

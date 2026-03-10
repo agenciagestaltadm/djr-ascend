@@ -52,13 +52,13 @@ export const publicImages: PublicImage[] = [
   },
   {
     key: "hero-bg",
-    src: "/hero-bg.jpg",
-    alt: "Sala de tomografia com iluminação vermelha",
+    src: "/imagemalterado1.jpeg",
+    alt: "Imagem de fundo da seção hero",
     category: "heroBackground",
     sources: [
       {
         type: "image/webp",
-        srcSet: webpSrcSet("hero-bg", [960, 1280, 1920, 2560]),
+        srcSet: webpSrcSet("imagemalterado1", [960, 1280, 1920, 2560]),
         sizes: sizesHeroBackground,
       },
     ],
@@ -259,6 +259,87 @@ export const publicImages: PublicImage[] = [
     category: "gallery",
     sources: [
       { type: "image/webp", srcSet: webpSrcSet("gallery-20", [480, 768, 1024]), sizes: sizesGallery },
+    ],
+  },
+  {
+    key: "gallery-21",
+    src: "/WhatsApp%20Image%202026-03-03%20at%2015.48.30.jpeg",
+    alt: "Foto da galeria DJR 21 - Redução de erros técnicos e custos",
+    category: "gallery",
+    sources: [
+      { type: "image/webp", srcSet: webpSrcSet("gallery-21", [480, 768, 1024]), sizes: sizesGallery },
+    ],
+  },
+  {
+    key: "gallery-22",
+    src: "/imagemalterado2.jpeg",
+    alt: "Foto da galeria DJR 22 - Imagem da clínica/hospital",
+    category: "gallery",
+    sources: [
+      { type: "image/webp", srcSet: webpSrcSet("gallery-22", [480, 768, 1024]), sizes: sizesGallery },
+    ],
+  },
+  {
+    key: "gallery-23",
+    src: "/imagemalterado3.jpeg",
+    alt: "Foto da galeria DJR 23 - Imagem de equipamentos",
+    category: "gallery",
+    sources: [
+      { type: "image/webp", srcSet: webpSrcSet("gallery-23", [480, 768, 1024]), sizes: sizesGallery },
+    ],
+  },
+  {
+    key: "gallery-24",
+    src: "/imagemalterado4.jpeg",
+    alt: "Foto da galeria DJR 24 - Imagem do Hospital HCA",
+    category: "gallery",
+    sources: [
+      { type: "image/webp", srcSet: webpSrcSet("gallery-24", [480, 768, 1024]), sizes: sizesGallery },
+    ],
+  },
+  {
+    key: "gallery-25",
+    src: "/imagemalterado5.jpeg",
+    alt: "Foto da galeria DJR 25 - Imagem do Hospital HSMA",
+    category: "gallery",
+    sources: [
+      { type: "image/webp", srcSet: webpSrcSet("gallery-25", [480, 768, 1024]), sizes: sizesGallery },
+    ],
+  },
+  {
+    key: "gallery-26",
+    src: "/imagemalterado6.jpeg",
+    alt: "Foto da galeria DJR 26 - 25 anos de experiência",
+    category: "gallery",
+    sources: [
+      { type: "image/webp", srcSet: webpSrcSet("gallery-26", [480, 768, 1024]), sizes: sizesGallery },
+    ],
+  },
+  {
+    key: "gallery-27",
+    src: "/imagemalterada7.jpeg",
+    alt: "Foto da galeria DJR 27 - 10 mil+ alunos formados",
+    category: "gallery",
+    sources: [
+      { type: "image/webp", srcSet: webpSrcSet("gallery-27", [480, 768, 1024]), sizes: sizesGallery },
+    ],
+  },
+  {
+    key: "gallery-28",
+    src: "/imagemalterada8.jpeg",
+    alt: "Foto da galeria DJR 28 - 11 anos+ no mercado DJR",
+    category: "gallery",
+    sources: [
+      { type: "image/webp", srcSet: webpSrcSet("gallery-28", [480, 768, 1024]), sizes: sizesGallery },
+    ],
+  },
+  {
+    key: "gallery-29",
+    src: "/imagemalterada9.jpeg",
+    alt: "Foto da galeria DJR 29 - 2 regiões Norte e Nordeste",
+    category: "gallery",
+    sources: [
+      { type: "image/webp", srcSet: webpSrcSet("gallery-29", [480, 768, 1024]), sizes: sizesGallery },
     ],
   },
 ];

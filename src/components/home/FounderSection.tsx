@@ -13,7 +13,14 @@ const stats = [
 ];
 
 const FounderSection = () => {
-  const images = publicImagesByCategory.gallery.slice(13, 17);
+  const baseImages = publicImagesByCategory.gallery.slice(13, 17);
+  // Usar novas imagens para os cards
+  const images = [
+    publicImagesByCategory.gallery[25], // gallery-26 (imagemalterado6) - 25 anos
+    publicImagesByCategory.gallery[26], // gallery-27 (imagemalterada7) - 10 mil+ alunos
+    publicImagesByCategory.gallery[27], // gallery-28 (imagemalterada8) - 11 anos+ no mercado
+    publicImagesByCategory.gallery[28], // gallery-29 (imagemalterada9) - 2 regiões
+  ];
 
   return (
     <section id="quem-somos" className="section-padding section-scroll-target bg-djr-darker relative overflow-hidden">

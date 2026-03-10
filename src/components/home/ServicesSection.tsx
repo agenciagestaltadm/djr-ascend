@@ -46,7 +46,16 @@ const services = [
 ];
 
 const ServicesSection = () => {
-  const images = publicImagesByCategory.gallery.slice(4, 10);
+  const baseImages = publicImagesByCategory.gallery.slice(4, 10);
+  // Substituir imagem do card "Equipamentos" (índice 4) pela nova gallery-23
+  const images = [
+    baseImages[0], // gallery-05
+    baseImages[1], // gallery-06
+    baseImages[2], // gallery-07
+    baseImages[3], // gallery-08
+    publicImagesByCategory.gallery[22], // gallery-23 (imagemalterado3) - Equipamentos
+    baseImages[5], // gallery-10
+  ];
 
   return (
     <section id="servicos" className="section-padding section-scroll-target bg-djr-darker relative overflow-hidden">

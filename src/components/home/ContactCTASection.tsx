@@ -1,4 +1,4 @@
-import { CalendarClock, Quote, Phone, Mail } from "lucide-react";
+import { CalendarClock, Quote, Phone, Mail, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/shared/ScrollReveal";
 import SectionHeading from "@/components/shared/SectionHeading";
@@ -107,6 +107,15 @@ const ContactCTASection = () => {
                   >
                     <Mail className="w-4 h-4 text-primary" />
                     djrdiagnosticos@gmail.com
+                  </a>
+                  <a
+                    href="https://instagram.com/djrdiagnosticos"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 rounded-lg border border-border/40 bg-card/30 px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
+                  >
+                    <Instagram className="w-4 h-4 text-primary" />
+                    @djrdiagnosticos
                   </a>
                 </div>
               </div>

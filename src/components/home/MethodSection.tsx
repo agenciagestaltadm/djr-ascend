@@ -38,7 +38,7 @@ const pillars = [
 ];
 
 const MethodSection = () => {
-  const image = publicImagesByCategory.gallery[18];
+  const image = publicImagesByCategory.gallery[21]; // gallery-22 (imagemalterado2)
 
   return (
     <section className="section-padding bg-djr-darker relative overflow-hidden">
