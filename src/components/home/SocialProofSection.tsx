@@ -20,8 +20,8 @@ const claims = [
 ];
 
 const SocialProofSection = () => {
-  const banner = publicImagesByCategory.heroBackground[0];
-  const image = publicImagesByCategory.gallery[17];
+  const banner = publicImagesByCategory.gallery[19]; // gallery-20 - imagem de equipamento/tomografia
+  const image = publicImagesByCategory.gallery[17]; // gallery-18
   const fallbackSrc =
     "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='2'%20height='2'%3E%3Crect%20width='2'%20height='2'%20fill='black'/%3E%3C/svg%3E";
 

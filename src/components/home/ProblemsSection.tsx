@@ -28,7 +28,14 @@ const problems = [
 ];
 
 const ProblemsSection = () => {
-  const images = publicImagesByCategory.gallery.slice(0, 4);
+  const baseImages = publicImagesByCategory.gallery.slice(0, 4);
+  // Substituir primeira imagem (Glosas e erros técnicos) pela gallery-21
+  const images = [
+    publicImagesByCategory.gallery[20], // gallery-21 - Nova imagem para Glosas e erros técnicos
+    baseImages[1], // gallery-02
+    baseImages[2], // gallery-03
+    baseImages[3], // gallery-04
+  ];
 
   return (
     <section className="section-padding relative">
