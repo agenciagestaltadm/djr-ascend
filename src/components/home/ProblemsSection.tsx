@@ -43,7 +43,7 @@ const ProblemsSection = () => {
         <SectionHeading
           badge="Desafios"
           title="Problemas que resolvemos"
-          subtitle="Identificamos e tratamos os gargalos que travam a eficiência do seu apoio diagnostico."
+          subtitle="Identificamos e tratamos os gargalos que travam a eficiência do seu apoio diagnóstico."
         />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">

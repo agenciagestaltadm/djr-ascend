@@ -25,7 +25,7 @@ const BeforeAfterSection = () => {
         <SectionHeading
           badge="Transformação"
           title="Antes e depois da DJR"
-          subtitle="Veja o impacto real da nossa assessoria no dia a dia do seu apoio diagnostico."
+          subtitle="Veja o impacto real da nossa assessoria no dia a dia do seu apoio diagnóstico."
         />
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">

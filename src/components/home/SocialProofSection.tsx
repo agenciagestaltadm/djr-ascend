@@ -20,7 +20,13 @@ const claims = [
 ];
 
 const SocialProofSection = () => {
-  const banner = publicImagesByCategory.gallery[19]; // gallery-20 - imagem de equipamento/tomografia
+  const banner = {
+    src: "/hero-bg.jpg",
+    alt: "Imagem de fundo - equipamento de diagnóstico",
+    sources: [
+      { type: "image/webp", srcSet: "/optimized/hero-bg-960.webp 960w, /optimized/hero-bg-1280.webp 1280w, /optimized/hero-bg-1920.webp 1920w, /optimized/hero-bg-2560.webp 2560w", sizes: "100vw" }
+    ]
+  };
   const fallbackSrc =
     "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='2'%20height='2'%3E%3Crect%20width='2'%20height='2'%20fill='black'/%3E%3C/svg%3E";
 
@@ -69,7 +75,7 @@ const SocialProofSection = () => {
               </h3>
               <p className="text-muted-foreground leading-relaxed max-w-xl">
                 A DJR atua com processos e indicadores para aumentar produtividade, reduzir custos e padronizar rotinas.
-                As imagens ao longo do site reforçam a presença prática no dia a dia do apoio diagnostico.
+                As imagens ao longo do site reforçam a presença prática no dia a dia do apoio diagnóstico.
               </p>
             </div>
           </ScrollReveal>

@@ -30,7 +30,7 @@ const cases = [
     city: "Ananindeua/PA",
     highlight: null,
     highlightLabel: "Implantação do modelo de gestão em imagenologia",
-    desc: "Estruturação completa do seu apoio diagnostico com processos, indicadores e padronização.",
+    desc: "Estruturação completa do seu apoio diagnóstico com processos, indicadores e padronização.",
     tag: "Implantação",
   },
 ];

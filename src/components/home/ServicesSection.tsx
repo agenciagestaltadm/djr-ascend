@@ -64,7 +64,7 @@ const ServicesSection = () => {
         <SectionHeading
           badge="Serviços"
           title="Soluções completas para Apoio Diagnóstico"
-          subtitle="Da estratégia à operação, cobrimos todas as frentes do seu apoio diagnostico."
+          subtitle="Da estratégia à operação, cobrimos todas as frentes do seu apoio diagnóstico."
         />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">

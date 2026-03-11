@@ -47,7 +47,7 @@ const MethodSection = () => {
         <SectionHeading
           badge="Metodologia"
           title="O Método DJR"
-          subtitle="Quatro etapas estruturadas para transformar o desempenho do seu apoio diagnostico."
+          subtitle="Quatro etapas estruturadas para transformar o desempenho do seu apoio diagnóstico."
         />
 
         <div className="grid lg:grid-cols-2 gap-10 items-start max-w-6xl mx-auto">
