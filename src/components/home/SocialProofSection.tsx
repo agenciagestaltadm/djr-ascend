@@ -21,7 +21,6 @@ const claims = [
 
 const SocialProofSection = () => {
   const banner = publicImagesByCategory.gallery[19]; // gallery-20 - imagem de equipamento/tomografia
-  const image = publicImagesByCategory.gallery[17]; // gallery-18
   const fallbackSrc =
     "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='2'%20height='2'%3E%3Crect%20width='2'%20height='2'%20fill='black'/%3E%3C/svg%3E";
 
@@ -89,15 +88,6 @@ const SocialProofSection = () => {
               <div className="absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full bg-primary/15 blur-[120px] pointer-events-none" />
               <div className="absolute inset-0 bg-gradient-to-tr from-background/90 via-background/35 to-transparent pointer-events-none" />
               <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background/95 via-background/55 to-transparent pointer-events-none" />
-              <div className="absolute bottom-4 right-4 w-40 h-28 rounded-xl overflow-hidden border border-border/40">
-                <ResponsiveImage
-                  src={image?.src ?? publicImagesByCategory.icon[0].src}
-                  alt={image?.alt ?? publicImagesByCategory.icon[0].alt}
-                  sources={image?.sources}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
             </div>
           </ScrollReveal>
         </div>
