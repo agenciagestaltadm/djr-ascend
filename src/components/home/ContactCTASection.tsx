@@ -33,8 +33,8 @@ const ContactCTASection = () => {
       <div className="container-djr relative z-10">
         <SectionHeading
           badge="Consultoria"
-          title="Agende uma consultoria para o seu setor de imagem"
-          subtitle="Converse com nossa equipe e receba um direcionamento claro para reduzir glosas e elevar produtividade."
+          title="Agende uma consultoria para o seu apoio diagnostico"
+          subtitle="Converse com nossa equipe e receba um direcionamento claro para reduzir custos, glosas e elevar produtividade."
         />
 
         <div className="grid desktop:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -46,7 +46,7 @@ const ContactCTASection = () => {
                 </div>
                 <div>
                   <p className="font-heading font-semibold text-foreground">O que nossos parceiros relatam</p>
-                  <p className="text-sm text-muted-foreground">Resultados práticos no dia a dia do setor.</p>
+                  <p className="text-sm text-muted-foreground">Resultados práticos no dia a dia do apoio diagnostico.</p>
                 </div>
               </div>
 
@@ -84,7 +84,7 @@ const ContactCTASection = () => {
                   Vamos alinhar seu próximo passo
                 </h3>
                 <p className="text-muted-foreground mb-5 max-w-sm">
-                  Agende uma consultoria e receba orientação objetiva sobre rotinas, indicadores e melhorias para o setor.
+                  Agende uma consultoria e receba orientação objetiva sobre rotinas, indicadores e melhorias para o dia a dia do apoio diagnostico.
                 </p>
                 <Button asChild size="lg" className="gap-2 font-heading font-semibold scan-line">
                   <a href={CONSULTORIA_WA_URL} target="_blank" rel="noopener noreferrer">

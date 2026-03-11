@@ -29,7 +29,7 @@ const FounderSection = () => {
         <SectionHeading
           badge="Autoridade"
           title="Daniel Jr — 25 anos de experiência"
-          subtitle="Pioneiro em tecnologias e procedimentos radiológicos na região Norte, com vasta atuação em hospitais e clínicas."
+          subtitle="Pioneiro em tecnologias e procedimentos radiológicos na região Norte e Nordeste, com vasta atuação em hospitais e clínicas."
         />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-14">

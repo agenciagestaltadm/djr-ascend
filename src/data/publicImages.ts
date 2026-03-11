@@ -271,15 +271,6 @@ export const publicImages: PublicImage[] = [
     ],
   },
   {
-    key: "gallery-22",
-    src: "/imagemalterado2.jpeg",
-    alt: "Foto da galeria DJR 22 - Imagem da clínica/hospital",
-    category: "gallery",
-    sources: [
-      { type: "image/webp", srcSet: webpSrcSet("gallery-22", [480, 768, 1024]), sizes: sizesGallery },
-    ],
-  },
-  {
     key: "gallery-23",
     src: "/imagemalterado3.jpeg",
     alt: "Foto da galeria DJR 23 - Imagem de equipamentos",

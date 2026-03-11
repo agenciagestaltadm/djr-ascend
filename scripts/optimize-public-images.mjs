@@ -97,12 +97,6 @@ const run = async () => {
       quality: 80,
     })),
     {
-      inputFile: "imagemalterado2.jpeg",
-      key: "gallery-22",
-      widths: [480, 768, 1024],
-      quality: 80,
-    },
-    {
       inputFile: "imagemalterado3.jpeg",
       key: "gallery-23",
       widths: [480, 768, 1024],

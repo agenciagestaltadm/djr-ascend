@@ -15,7 +15,7 @@ const after = [
   "Equipe treinada e produtiva",
   "Fluxo estável e eficiente",
   "Indicadores monitorados",
-  "Redução significativa de glosas",
+  "Redução significativa de custos",
 ];
 
 const BeforeAfterSection = () => {
@@ -25,7 +25,7 @@ const BeforeAfterSection = () => {
         <SectionHeading
           badge="Transformação"
           title="Antes e depois da DJR"
-          subtitle="Veja o impacto real da nossa assessoria no dia a dia do seu setor."
+          subtitle="Veja o impacto real da nossa assessoria no dia a dia do seu apoio diagnostico."
         />
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">

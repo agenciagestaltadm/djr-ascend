@@ -38,7 +38,7 @@ const pillars = [
 ];
 
 const MethodSection = () => {
-  const image = publicImagesByCategory.gallery[21]; // gallery-22 (imagemalterado2)
+  const image = publicImagesByCategory.gallery[20]; // gallery-21 (WhatsApp Image 2026-03-03)
 
   return (
     <section className="section-padding bg-djr-darker relative overflow-hidden">
@@ -47,7 +47,7 @@ const MethodSection = () => {
         <SectionHeading
           badge="Metodologia"
           title="O Método DJR"
-          subtitle="Quatro etapas estruturadas para transformar o desempenho do seu setor de imagem."
+          subtitle="Quatro etapas estruturadas para transformar o desempenho do seu apoio diagnostico."
         />
 
         <div className="grid lg:grid-cols-2 gap-10 items-start max-w-6xl mx-auto">

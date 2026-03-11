@@ -16,7 +16,7 @@ const claims = [
   "Modelo de gestão implantado",
   "Capacitação de equipes",
   "Otimização de protocolos",
-  "Redução de glosas",
+  "Redução de custos",
 ];
 
 const SocialProofSection = () => {
@@ -69,8 +69,8 @@ const SocialProofSection = () => {
                 Evidência no que você vê e no que você mede
               </h3>
               <p className="text-muted-foreground leading-relaxed max-w-xl">
-                A DJR atua com processos e indicadores para aumentar produtividade, reduzir glosas e padronizar rotinas.
-                As imagens ao longo do site reforçam a presença prática no dia a dia do setor.
+                A DJR atua com processos e indicadores para aumentar produtividade, reduzir custos e padronizar rotinas.
+                As imagens ao longo do site reforçam a presença prática no dia a dia do apoio diagnostico.
               </p>
             </div>
           </ScrollReveal>

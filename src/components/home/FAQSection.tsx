@@ -9,8 +9,8 @@ import {
 
 const faqs = [
   {
-    q: "Em quanto tempo vemos redução de erros e glosas?",
-    a: "Dependendo do cenário, melhorias operacionais podem ser percebidas já nas primeiras semanas de implementação. Resultados mensuráveis em indicadores de glosa e erros técnicos costumam aparecer entre 30 e 90 dias.",
+    q: "Em quanto tempo vemos redução de erros e custos?",
+    a: "Dependendo do cenário, melhorias operacionais podem ser percebidas já nas primeiras semanas de implementação. Resultados mensuráveis em indicadores de custos e erros técnicos costumam aparecer entre 30 e 90 dias.",
   },
   {
     q: "Vocês atendem quais estados?",
