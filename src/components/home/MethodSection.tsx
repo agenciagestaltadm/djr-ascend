@@ -38,7 +38,7 @@ const pillars = [
 ];
 
 const MethodSection = () => {
-  const image = publicImagesByCategory.gallery[20]; // gallery-21 (WhatsApp Image 2026-03-03)
+  const image = publicImagesByCategory.gallery[21]; // gallery-22 (imagemalterado2)
 
   return (
     <section className="section-padding bg-djr-darker relative overflow-hidden">
