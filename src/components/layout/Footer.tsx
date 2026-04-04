@@ -45,11 +45,11 @@ const Footer = () => {
             <h4 className="font-heading font-semibold text-sm text-foreground mb-3">Contato</h4>
             <div className="grid gap-2">
               <a
-                href="tel:+5591989948319"
+                href="tel:+5591920045607"
                 className="inline-flex items-center justify-center desktop:justify-start gap-2 rounded-lg border border-border/40 bg-card/20 px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
               >
                 <Phone className="w-4 h-4 text-primary" />
-                (91) 98994-8319
+                (91) 92004-5607
               </a>
               <a
                 href="mailto:djrdiagnosticos@gmail.com"

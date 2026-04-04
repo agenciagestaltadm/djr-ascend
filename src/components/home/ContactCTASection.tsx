@@ -3,8 +3,9 @@ import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/shared/ScrollReveal";
 import SectionHeading from "@/components/shared/SectionHeading";
 import ResponsiveImage from "@/components/shared/ResponsiveImage";
+import ContactSelector from "@/components/shared/ContactSelector";
 import { publicImagesByCategory } from "@/data/publicImages";
-import { CONSULTORIA_CTA_LABEL, CONSULTORIA_WA_URL } from "@/lib/consultoria";
+import { CONSULTORIA_CTA_LABEL } from "@/lib/consultoria";
 
 const testimonials = [
   {
@@ -86,20 +87,15 @@ const ContactCTASection = () => {
                 <p className="text-muted-foreground mb-5 max-w-sm">
                   Agende uma consultoria e receba orientação objetiva sobre rotinas, indicadores e melhorias para o dia a dia do apoio diagnóstico.
                 </p>
-                <Button asChild size="lg" className="gap-2 font-heading font-semibold scan-line">
-                  <a href={CONSULTORIA_WA_URL} target="_blank" rel="noopener noreferrer">
-                    <CalendarClock className="w-5 h-5" />
-                    {CONSULTORIA_CTA_LABEL}
-                  </a>
-                </Button>
+                <ContactSelector buttonText={CONSULTORIA_CTA_LABEL} />
 
                 <div className="mt-5 w-full max-w-sm grid gap-3 text-left">
                   <a
-                    href="tel:+5591989948319"
+                    href="tel:+5591920045607"
                     className="flex items-center gap-2 rounded-lg border border-border/40 bg-card/30 px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
                   >
                     <Phone className="w-4 h-4 text-primary" />
-                    (91) 98994-8319
+                    (91) 92004-5607
                   </a>
                   <a
                     href="mailto:djrdiagnosticos@gmail.com"
@@ -109,13 +105,13 @@ const ContactCTASection = () => {
                     djrdiagnosticos@gmail.com
                   </a>
                   <a
-                    href="https://instagram.com/djrdiagnosticos"
+                    href="https://instagram.com/djr.assessoria"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 rounded-lg border border-border/40 bg-card/30 px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
                   >
                     <Instagram className="w-4 h-4 text-primary" />
-                    @djrdiagnosticos
+                    @djr.assessoria
                   </a>
                 </div>
               </div>

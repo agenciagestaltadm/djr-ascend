@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, CalendarClock } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import ResponsiveImage from "@/components/shared/ResponsiveImage";
+import ContactSelector from "@/components/shared/ContactSelector";
 import { publicImagesByCategory } from "@/data/publicImages";
-import { CONSULTORIA_CTA_LABEL, CONSULTORIA_WA_URL } from "@/lib/consultoria";
+import { CONSULTORIA_CTA_LABEL } from "@/lib/consultoria";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -69,12 +70,7 @@ const Header = () => {
 
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <Button asChild size="sm" className="gap-2 font-heading font-semibold">
-            <a href={CONSULTORIA_WA_URL} target="_blank" rel="noopener noreferrer">
-              <CalendarClock className="w-4 h-4" />
-              {CONSULTORIA_CTA_LABEL}
-            </a>
-          </Button>
+          <ContactSelector buttonText={CONSULTORIA_CTA_LABEL} buttonClassName="text-sm" />
         </div>
 
         {/* Mobile Toggle */}
@@ -107,12 +103,9 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
-              <Button asChild className="gap-2 mt-2 font-heading">
-                <a href={CONSULTORIA_WA_URL} target="_blank" rel="noopener noreferrer">
-                  <CalendarClock className="w-4 h-4" />
-                  {CONSULTORIA_CTA_LABEL}
-                </a>
-              </Button>
+              <div className="mt-2">
+                <ContactSelector buttonText={CONSULTORIA_CTA_LABEL} />
+              </div>
             </nav>
           </motion.div>
         )}
